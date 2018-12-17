@@ -116,6 +116,7 @@ module Asciidoctor
   end
 end
 
-[Nokogiri::HTML::Document, Nokogiri::HTML::DocumentFragment].each do |klass|
+[Nokogiri::HTML::Document, Nokogiri::HTML::DocumentFragment,
+ Nokogiri::XML::Document, Nokogiri::XML::DocumentFragment].each do |klass|
   klass.send :include, Asciidoctor::DocTest::HtmlNormalizer
 end
